@@ -29,7 +29,7 @@ export default function Home() {
       <div className="flex animate-hero-text-slide-up-fade items-center justify-center gap-2 text-center md:-mt-10">
         <span className="sans text-sm leading-[1.6] text-slate-11 font-normal">Backed by</span>
         <span className="sans text-sm leading-[1.6] text-slate-11 font-normal flex items-center gap-1">
-          DRAGONS DEN
+          Dragons Den 🤣
         </span>
       </div>
     </>
