@@ -1,5 +1,6 @@
 'use client'
 import { useChat } from 'ai/react';
+import Link from 'next/link';
 
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat();
@@ -12,6 +13,7 @@ export default function Home() {
           <div className="flex items-center">
             <h1 className="text-white text-3xl font-semibold">lexiql.</h1>
           </div>
+          <Link class="text-base h-12 pl-5 pr-2 gap-0 font-semibold bg-white text-black hover:bg-white/90 focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:outline-none focus-visible:bg-white/90 disabled:hover:bg-white inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200" href="/pricing">Pricing<span class="text-[#70757E]"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span></Link>
         </header>
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 items-center">
