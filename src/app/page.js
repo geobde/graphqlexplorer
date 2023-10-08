@@ -3,9 +3,7 @@ import { useChat } from 'ai/react';
 
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
-
-  console.log('messages', messages);
-
+  
   return (
     <>
       <section className="w-full h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black to-black via-zinc-900 overflow-hidden">
