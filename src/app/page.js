@@ -27,11 +27,12 @@ export default function Home() {
                 <div class="flexpy-[7vh] my-12 justify-center items-center">
                 <div class="flex  flex-col w-full justify-center items-center align-center">
 
-                <div class="mt-5 flex items-center justify-center w-full max-w-lg gap-2 px-2 divide-x shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
+                <div class="mt-5 flex items-center justify-center w-full max-w-lg gap-2 px-2 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
                 <div class="flex items-center self-end flex-1 min-w-0">
                     <div class="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
                     <div class="relative flex flex-1 min-w-0 self-start">
-                        <textarea 
+                        <input 
+                          type="text"
                           value={input}
                           onChange={handleInputChange}
                           rows="1" 
@@ -42,17 +43,13 @@ export default function Home() {
                     </div>
                     </div>
                 </div>
-                </div>
-              </div>
-             </div>
-             <button
-                className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-2 gap-0 font-semibold bg-white text-black hover:bg-white/90 focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:outline-none focus-visible:bg-white/90 disabled:hover:bg-white inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200"
+                <button
+                style={{color:"#a1a1aa"}}
                 type="submit"
               >
-                Generate results
                 {isLoading ? (
                   <svg
-                   style={{ marginLeft: 8 }}
+                   style={{ marginLeft: "-25px" }}
                     width="15"
                     height="15"
                     viewBox="0 0 24 24"
@@ -72,8 +69,8 @@ export default function Home() {
                   </svg>
                 ) : (
                   <svg
-                    width="24"
-                    height="24"
+                    width="32"
+                    height="32"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -88,10 +85,14 @@ export default function Home() {
                   </svg>
                 )}
               </button>
+                </div>
+                
+              </div>
+             </div>
         </form>
          </div>
         </div>
-       {!isLoading && <span style={{textAlign:"center", marginTop:20, color:"white"}}>{lastMessage?.content}</span>}
+       {!isLoading && <span style={{position:"absolute", bottom: "132px",left: 0,right: 0, textAlign:"center", marginTop:20, color:"white"}}>{lastMessage?.content}</span>}
       </div>
      </div>
   </section>
