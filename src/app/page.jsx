@@ -10,7 +10,7 @@ export default function Home() {
       <section className="w-full h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black to-black via-zinc-900 overflow-hidden">
        <header className="pt-8 pb-0 pl-16 pr-16 flex justify-between items-center fixed w-full top-0">
           <div className="flex items-center">
-            <h1 className="text-white text-3xl font-semibold">lexiql.</h1>
+            <h1 style={{marginTop:"-15px"}} className="text-white text-3xl font-semibold">lexiql.</h1>
           </div>
           <div class="flex gap-4">
             <a style={{color:"white"}} class="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-4 gap-0 font-semibold bg-slate-1 border-slate-1 text-slate-11 hover:bg-slate-5 hover:text-slate-12 focus-visible:ring-4 focus-visible:ring-slate-7 focus-visible:outline-none focus-visible:bg-slate-6 disabled:hover:bg-slate-1 inline-flex items-center justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200 hidden lg:flex" data-state="closed" href="/login">Login</a>
