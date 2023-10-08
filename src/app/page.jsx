@@ -8,13 +8,101 @@ export default function Home() {
   return (
     <>
       <section className="w-full h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black to-black via-zinc-900 overflow-hidden">
-       <header className="pt-8 pb-0 pl-16 pr-16 flex justify-between items-center fixed w-full top-0">
-          <div className="flex items-center">
-            <h1 style={{marginTop:"-15px"}} className="text-white text-3xl font-semibold">lexiql.</h1>
-          </div>
-          <div class="flex gap-4">
-            <a style={{color:"white"}} class="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-4 gap-0 font-semibold bg-slate-1 border-slate-1 text-slate-11 hover:bg-slate-5 hover:text-slate-12 focus-visible:ring-4 focus-visible:ring-slate-7 focus-visible:outline-none focus-visible:bg-slate-6 disabled:hover:bg-slate-1 inline-flex items-center justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200 hidden lg:flex" data-state="closed" href="/login">Login</a>
-            <a class="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-2 gap-0 font-semibold bg-white text-zinc hover:bg-white/90 focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:outline-none focus-visible:bg-white/90 disabled:hover:bg-white inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200" data-state="closed" href="/signup">Sign up<span class="text-[#70757E]"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.75 8.75L14.25 12L10.75 15.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span></a></div>
+        <header style={{width: "88%",position: "absolute",top: "18px", color:"white"}} className="sticky top-0 border-b border-transparent backdrop-blur-sm transition duration-200 ease-in-out animate-header-slide-down-fade"
+          >
+            <div>
+              <div className="mx-auto hidden h-[58px] w-full items-center justify-between transition duration-500 ease-in-out md:flex">
+                <div className="flex lg:w-[225px]">
+                  <span
+                    data-state="closed"
+                    className=""
+                  >
+                    <a
+                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 py-1"
+                      aria-label="Resend"
+                      href="/home"
+                    >
+                     <span style={{fontSize:30}}>lexiQL</span> 
+                    </a>
+                  </span>
+                </div>
+                <ul className="flex items-center gap-4">
+                  <li>
+                    <a
+                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
+                      href="/about"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
+                      href="/docs"
+                    >
+                      Docs
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
+                      href="/docs"
+                    >
+                      Customers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
+                      href="/docs"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
+                      href="/pricing"
+                    >
+                      Pricing
+                    </a>
+                  </li>
+                </ul>
+                <div className="flex gap-4">
+                  <a
+                    className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-4 gap-0 font-semibold bg-slate-1 border-slate-1 text-slate-11 hover:bg-slate-5 hover:text-slate-12 focus-visible:ring-4 focus-visible:ring-slate-7 focus-visible:outline-none focus-visible:bg-slate-6 disabled:hover:bg-slate-1 inline-flex items-center justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200 hidden lg:flex"
+                    data-state="closed"
+                    href="/login"
+                  >
+                    Sign in
+                  </a>
+                  <a
+                    className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-2 gap-0 font-semibold bg-white text-black hover:bg-white/90 focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:outline-none focus-visible:bg-white/90 disabled:hover:bg-white inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200"
+                    data-state="closed"
+                    href="/signup"
+                  >
+                    Sing up
+                    <span className="text-[#70757E]">
+                      <svg
+                        fill="none"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.75 8.75L14.25 12L10.75 15.25"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                        ></path>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
         </header>
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 items-center">
@@ -27,10 +115,10 @@ export default function Home() {
                 Generate GraphQL queries and schemas effortlessly <br /> with the power of AI.
                 </p>
                 <form onSubmit={handleSubmit} class="w-full h-full">
-                <div class="flexpy-[7vh] my-12 justify-center items-center">
+                <div class="flexpy-[4vh] my-12 justify-center items-center">
                 <div class="flex  flex-col w-full justify-center items-center align-center">
 
-                <div class="mt-5 flex items-center justify-center w-full max-w-lg gap-2 px-2 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
+                <div class="flex items-center justify-center w-full max-w-lg gap-2 px-2 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
                 <div class="flex items-center self-end flex-1 min-w-0">
                     <div class="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
                     <div class="relative flex flex-1 min-w-0 self-start">
