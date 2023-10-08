@@ -17,7 +17,7 @@ export default function Home() {
       <section className="w-full h-screen flex flex-col justify-center items-center bg-gradient-to-br from-black to-black via-zinc-900 overflow-hidden">
        <header className="pt-8 pb-0 pl-16 pr-16 flex justify-between items-center fixed w-full top-0">
           <div className="flex items-center">
-            <h1 className="text-white text-2xl font-semibold">LexiQL</h1>
+            <h1 className="text-white text-3xl font-semibold">lexiql.</h1>
           </div>
           <div className="space-x-8">
             <a href="#" className="text-sm text-white hover:underline">Login</a>
