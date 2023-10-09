@@ -70,8 +70,8 @@ export default function Home() {
                 <div className="flexpy-[4vh] my-12 justify-center items-center">
                 <div className="flex  flex-col w-full justify-center items-center align-start">
 
-                <div className="flex items-center justify-center w-full max-w-lg gap-2 px-2 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
-                <div class="flex items-center justify-center rounded-l-full"><svg style={{marginLeft:7,color:"rgb(209, 213, 219)"}} viewBox="0 0 24 24" class="h-4 w-4 space-kit-1a134qk"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M9.364 18.5l-.932.932a4.5 4.5 0 0 1-6.364-6.364l4.773-4.774a4.5 4.5 0 0 1 6.825 5.825"></path><path d="M14.818 5.567l.75-.75a4.5 4.5 0 0 1 6.364 6.364h0l-4.773 4.773a4.5 4.5 0 0 1-6.824-5.826"></path></g></svg></div>
+                <div className="flex items-center justify-center w-full max-w-lg gap-2 px-2 divide-x divide-zinc-600 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
+                <div class="flex items-center justify-center rounded-l-full"><svg style={{width:25,color:"rgb(209, 213, 219)"}} viewBox="0 0 24 24" className="h-4 w-4 space-kit-1a134qk"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M9.364 18.5l-.932.932a4.5 4.5 0 0 1-6.364-6.364l4.773-4.774a4.5 4.5 0 0 1 6.825 5.825"></path><path d="M14.818 5.567l.75-.75a4.5 4.5 0 0 1 6.364 6.364h0l-4.773 4.773a4.5 4.5 0 0 1-6.824-5.826"></path></g></svg></div>
                 <div className="flex items-center self-end flex-1 min-w-0">
                     <div className="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
                     <div className="relative flex flex-1 min-w-0 self-start">
@@ -88,7 +88,8 @@ export default function Home() {
                 </div>
                 </div>
 
-                <div className="mt-5 flex items-center justify-center w-full max-w-lg gap-2 px-2 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
+                <div className="mt-5 flex items-center justify-center w-full max-w-lg gap-2 px-2  divide-x divide-zinc-600 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
+                <div class="flex items-center justify-center rounded-l-full"><Image class="relative flex rounded-full shrink-0" width={25} height={25} alt="user" src="/user.png" /></div>
                 <div className="flex items-center self-end flex-1 min-w-0">
                     <div className="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
                     <div className="relative flex flex-1 min-w-0 self-start">
@@ -104,7 +105,7 @@ export default function Home() {
                     </div>
                 </div>
                 <button
-                style={{color:"#a1a1aa"}}
+                style={{border:"none", color:"#a1a1aa"}}
                 type="submit"
               >
                 {isLoading ? (
