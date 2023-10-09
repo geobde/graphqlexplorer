@@ -2,7 +2,7 @@ import OpenAI from 'openai';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 
 const MODEL = "gpt-3.5-turbo";
-const INTROSPECTION_QUERY = gql`
+const INTROSPECTION_QUERY = `
   query targetInfo {
   target(ensemblId: "ENSG00000169083") {
     id
@@ -23,8 +23,8 @@ const INTROSPECTION_QUERY = gql`
       value
     }
   }
-}
-`;
+}`
+;
 
 
 const openai = new OpenAI({
