@@ -1,5 +1,6 @@
 'use client'
 import { useChat } from 'ai/react';
+import Image from 'next/image';
 
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat();
@@ -22,52 +23,10 @@ export default function Home() {
                       aria-label="Resend"
                       href="/home"
                     >
-                     <span style={{fontSize:30}}>lexiQL</span> 
+                    <Image  width={150} height={150} alt="logo" src="/logo.png" />
                     </a>
                   </span>
                 </div>
-                <ul className="flex items-center gap-4">
-                  <li>
-                    <a
-                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
-                      href="/about"
-                    >
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
-                      href="/docs"
-                    >
-                      Docs
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
-                      href="/docs"
-                    >
-                      Customers
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
-                      href="/docs"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 rounded-md px-1 py-1 text-sm font-medium text-slate-11 hover:text-slate-12 focus-visible:text-slate-12 lg:px-2"
-                      href="/pricing"
-                    >
-                      Pricing
-                    </a>
-                  </li>
-                </ul>
                 <div className="flex gap-4">
                   <a
                     className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-4 gap-0 font-semibold bg-slate-1 border-slate-1 text-slate-11 hover:bg-slate-5 hover:text-slate-12 focus-visible:ring-4 focus-visible:ring-slate-7 focus-visible:outline-none focus-visible:bg-slate-6 disabled:hover:bg-slate-1 inline-flex items-center justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200 hidden lg:flex"
