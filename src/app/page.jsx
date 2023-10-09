@@ -94,6 +94,7 @@ export default function Home() {
                     <div className="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
                     <div className="relative flex flex-1 min-w-0 self-start">
                         <input 
+                          disabled={!endpoint}
                           type="text"
                           value={input}
                           onChange={handleInputChange}
