@@ -63,6 +63,9 @@ export default function Home() {
                 <h1 className="mb-5 text-4xl font-bold tracking-tighter sm:text-4xl xl:text-4xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
                   Generate GraphQL with AI in seconds!
                 </h1>
+                <p className="text-1xl font-normal tracking-tighter sm:text-1xl xl:text-1xl/none bg-clip-text text-gray-300">
+                 Find data by asking questions in natural language.
+                </p>
                 <form onSubmit={handleSubmit} className="w-full h-full">
                 <div className="flexpy-[4vh] my-12 justify-center items-center">
                 <div className="flex  flex-col w-full justify-center items-center align-start">
@@ -105,7 +108,7 @@ export default function Home() {
                           value={input}
                           onChange={handleInputChange}
                           className="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm" 
-                          placeholder="Send a message" 
+                          placeholder="Ask a question" 
                           style={{height: "41px !important"}} 
                         />
                     </div>

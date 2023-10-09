@@ -37,27 +37,10 @@ export const runtime = 'edge';
 export async function POST(req) {
   const { endpoint, messages } = await req.json();
 
-
-  const data = await fetch(
-    endpoint,
-    {
-      method: "POST",
-      body: JSON.stringify({
-        query: INTROSPECTION_QUERY,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  ).then((res) => res.json());
-
-  console.log('data',data)
-
-
   const response = await openai.chat.completions.create({
     model: MODEL,
     stream: true,
-    messages:data
+    messages
   });
   const stream = OpenAIStream(response);
   return new StreamingTextResponse(stream);
