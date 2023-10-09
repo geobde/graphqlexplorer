@@ -63,9 +63,6 @@ export default function Home() {
                 <h1 className="mb-5 text-4xl font-bold tracking-tighter sm:text-4xl xl:text-4xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
                   Generate GraphQL with AI in seconds!
                 </h1>
-                <p className="text-1xl font-normal tracking-tighter sm:text-1xl xl:text-1xl/none bg-clip-text text-gray-300">
-                Generate GraphQL queries and schemas effortlessly <br /> with the power of AI.
-                </p>
                 <form onSubmit={handleSubmit} className="w-full h-full">
                 <div className="flexpy-[4vh] my-12 justify-center items-center">
                 <div className="flex  flex-col w-full justify-center items-center align-start">
@@ -86,6 +83,15 @@ export default function Home() {
                     </div>
                     </div>
                 </div>
+                {/\/graphql$/.test(endpoint) &&
+                  <button
+                  style={{border:"none", color:"#a1a1aa"}}
+                  type="submit"
+                >
+                  <svg style={{marginRight: 10 }}width="15" height="15" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.625 1.85547L22.7285 2.75195L9.36035 16.0516L8.46914 16.9428L7.57793 16.0516L0.896484 9.40176L0 8.51055L1.7877 6.71758L2.68418 7.60879L8.46914 13.3674L20.9408 0.953711L21.8373 0.0625L23.625 1.85547Z" fill="green"/>
+                  </svg>
+                </button>}
                 </div>
 
                 <div className="mt-5 flex items-center justify-center w-full max-w-lg gap-2 px-2  divide-x divide-zinc-600 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
@@ -94,7 +100,7 @@ export default function Home() {
                     <div className="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
                     <div className="relative flex flex-1 min-w-0 self-start">
                         <input 
-                          disabled={!endpoint}
+                          disabled={!/\/graphql$/.test(endpoint)}
                           type="text"
                           value={input}
                           onChange={handleInputChange}
