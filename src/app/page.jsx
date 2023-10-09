@@ -73,20 +73,20 @@ export default function Home() {
                 <p className="text-1xl font-normal tracking-tighter sm:text-1xl xl:text-1xl/none bg-clip-text text-gray-300">
                 Generate GraphQL queries and schemas effortlessly <br /> with the power of AI.
                 </p>
-                <form onSubmit={handleSubmit} class="w-full h-full">
-                <div class="flexpy-[4vh] my-12 justify-center items-center">
-                <div class="flex  flex-col w-full justify-center items-center align-center">
+                <form onSubmit={handleSubmit} className="w-full h-full">
+                <div className="flexpy-[4vh] my-12 justify-center items-center">
+                <div className="flex  flex-col w-full justify-center items-center align-center">
 
-                <div class="flex items-center justify-center w-full max-w-lg gap-2 px-2 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
-                <div class="flex items-center self-end flex-1 min-w-0">
-                    <div class="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
-                    <div class="relative flex flex-1 min-w-0 self-start">
+                <div className="flex items-center justify-center w-full max-w-lg gap-2 px-2 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
+                <div className="flex items-center self-end flex-1 min-w-0">
+                    <div className="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
+                    <div className="relative flex flex-1 min-w-0 self-start">
                         <input 
                           type="text"
                           value={input}
                           onChange={handleInputChange}
                           rows="1" 
-                          class="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm" 
+                          className="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm" 
                           placeholder="Send a message" 
                           style={{height: "41px !important"}} 
                         />
@@ -127,9 +127,9 @@ export default function Home() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
                       d="M10.75 8.75L14.25 12L10.75 15.25"
                     />
                   </svg>
