@@ -1,9 +1,14 @@
 'use client'
 import { useChat } from 'ai/react';
 import Image from 'next/image';
+import { useState } from "react";
 
 export default function Home() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat();
+  const [endpoint, setEndpoint] = useState('');
+  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
+    body: {
+      endpoint
+    }});
   const lastMessage = messages[messages.length - 1];
   
   return (
@@ -63,9 +68,28 @@ export default function Home() {
                 </p>
                 <form onSubmit={handleSubmit} className="w-full h-full">
                 <div className="flexpy-[4vh] my-12 justify-center items-center">
-                <div className="flex  flex-col w-full justify-center items-center align-center">
+                <div className="flex  flex-col w-full justify-center items-center align-start">
 
                 <div className="flex items-center justify-center w-full max-w-lg gap-2 px-2 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
+                <div class="flex items-center justify-center rounded-l-full"><svg style={{marginLeft:7,color:"rgb(209, 213, 219)"}} viewBox="0 0 24 24" class="h-4 w-4 space-kit-1a134qk"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M9.364 18.5l-.932.932a4.5 4.5 0 0 1-6.364-6.364l4.773-4.774a4.5 4.5 0 0 1 6.825 5.825"></path><path d="M14.818 5.567l.75-.75a4.5 4.5 0 0 1 6.364 6.364h0l-4.773 4.773a4.5 4.5 0 0 1-6.824-5.826"></path></g></svg></div>
+                <div className="flex items-center self-end flex-1 min-w-0">
+                    <div className="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
+                    <div className="relative flex flex-1 min-w-0 self-start">
+                        <input 
+                          value={endpoint}
+                          onChange={(e) => setEndpoint(e.target.value)}
+                          type="text"
+                          rows="1" 
+                          className="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm" 
+                          placeholder="What’s your GraphQL API Endpoint?" 
+                          style={{height: "41px !important"}} 
+                        />
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <div className="mt-5 flex items-center justify-center w-full max-w-lg gap-2 px-2 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
                 <div className="flex items-center self-end flex-1 min-w-0">
                     <div className="relative w-full flex items-center transition-all duration-300 min-h-full h-fit" style={{height: 41}}>
                     <div className="relative flex flex-1 min-w-0 self-start">
