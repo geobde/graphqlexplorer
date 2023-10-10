@@ -57,7 +57,8 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 style={{lineHeight:"47px"}} className="mb-5 text-4xl font-bold tracking-tighter sm:text-4xl xl:text-4xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-                  Find data by asking questions <br /> in natural language.
+                  Using GraphQL is like ordering naan <br /> 
+                  just ask, and its served!
                 </h1>
                 <form onSubmit={handleSubmit} className="w-full h-full">
                 <div className="flexpy-[4vh] my-12 justify-center items-center">
