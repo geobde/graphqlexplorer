@@ -16,7 +16,7 @@ export default function Home() {
         <header style={{width: "88%",position: "absolute",top: "18px", color:"white"}} className="sticky top-0 border-b border-transparent transition duration-200 ease-in-out"
           >
           <div className="mx-auto w-full items-center justify-between transition duration-500 ease-in-out flex">
-             <svg style={{width:50,fill: "white", marginTop: 7}}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M418.4 157.9c35.3-8.3 61.6-40 61.6-77.9c0-44.2-35.8-80-80-80c-43.4 0-78.7 34.5-80 77.5L136.2 151.1C121.7 136.8 101.9 128 80 128c-44.2 0-80 35.8-80 80s35.8 80 80 80c12.2 0 23.8-2.7 34.1-7.6L259.7 407.8c-2.4 7.6-3.7 15.8-3.7 24.2c0 44.2 35.8 80 80 80s80-35.8 80-80c0-27.7-14-52.1-35.4-66.4l37.8-207.7zM156.3 232.2c2.2-6.9 3.5-14.2 3.7-21.7l183.8-73.5c3.6 3.5 7.4 6.7 11.6 9.5L317.6 354.1c-5.5 1.3-10.8 3.1-15.8 5.5L156.3 232.2z"/></svg>
+              <svg style={{width:45,fill: "white", marginTop: 2}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M274.8 38.4l44.1 34.2c5.6 4.4 12.6 6.6 19.7 6.4l55.8-1.7c14-.4 26.5 8.6 30.4 22.1l15.6 53.6c2 6.8 6.3 12.8 12.2 16.8L498.6 201c11.6 7.9 16.3 22.5 11.6 35.7l-17.1 47.7C441.1 209.2 354.3 160 256 160s-185.1 49.2-237.1 124.4L1.8 236.7c-4.7-13.1 0-27.8 11.6-35.7l46.1-31.4c5.9-4 10.2-9.9 12.2-16.8L87.3 99.3c3.9-13.4 16.4-22.5 30.4-22.1L173.4 79c7.1 .2 14.1-2 19.7-6.4l44.1-34.2c11-8.6 26.5-8.6 37.5 0zM512 448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32C0 306.6 114.6 192 256 192s256 114.6 256 256zM112 416a16 16 0 1 0 0-32 16 16 0 1 0 0 32zm80-80a16 16 0 1 0 -32 0 16 16 0 1 0 32 0z"/></svg>
               <a
                 style={{marginTop:10}}
                 className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-2 gap-0 font-semibold bg-white text-black hover:bg-white/90 focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:outline-none focus-visible:bg-white/90 disabled:hover:bg-white inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200"
@@ -57,7 +57,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 style={{lineHeight:"47px"}} className="mb-5 text-4xl font-bold tracking-tighter sm:text-4xl xl:text-4xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-                  Using GraphQL is like ordering naan <br /> 
+                  Using GraphQL is like ordering tacoz <br /> 
                   just ask, and its served!
                 </h1>
                 <form onSubmit={handleSubmit} className="w-full h-full">
