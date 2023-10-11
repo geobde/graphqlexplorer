@@ -20,7 +20,8 @@ export default function Home() {
               <a
                 style={{marginTop:10}}
                 className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-2 gap-0 font-semibold bg-white text-black hover:bg-white/90 focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:outline-none focus-visible:bg-white/90 disabled:hover:bg-white inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200"
-                href="/https://explorer.intelligencia.ai/"
+                target="_blank"
+                href="https://explorer.intelligencia.ai/"
               >
                 <span style={{marginLeft:10}}>Exploer v1</span>
                 <span className="text-[#70757E]">
