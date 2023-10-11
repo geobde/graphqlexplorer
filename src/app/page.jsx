@@ -16,14 +16,13 @@ export default function Home() {
         <header style={{width: "88%",position: "absolute",top: "18px", color:"white"}} className="sticky top-0 border-b border-transparent transition duration-200 ease-in-out"
           >
           <div className="mx-auto w-full items-center justify-between transition duration-500 ease-in-out flex">
-              <svg style={{width:45,fill: "white", marginTop: 2}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M274.8 38.4l44.1 34.2c5.6 4.4 12.6 6.6 19.7 6.4l55.8-1.7c14-.4 26.5 8.6 30.4 22.1l15.6 53.6c2 6.8 6.3 12.8 12.2 16.8L498.6 201c11.6 7.9 16.3 22.5 11.6 35.7l-17.1 47.7C441.1 209.2 354.3 160 256 160s-185.1 49.2-237.1 124.4L1.8 236.7c-4.7-13.1 0-27.8 11.6-35.7l46.1-31.4c5.9-4 10.2-9.9 12.2-16.8L87.3 99.3c3.9-13.4 16.4-22.5 30.4-22.1L173.4 79c7.1 .2 14.1-2 19.7-6.4l44.1-34.2c11-8.6 26.5-8.6 37.5 0zM512 448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32C0 306.6 114.6 192 256 192s256 114.6 256 256zM112 416a16 16 0 1 0 0-32 16 16 0 1 0 0 32zm80-80a16 16 0 1 0 -32 0 16 16 0 1 0 32 0z"/></svg>
+              <span style={{fontSize:20}}>Explorer v2</span>
               <a
                 style={{marginTop:10}}
                 className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-2 gap-0 font-semibold bg-white text-black hover:bg-white/90 focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:outline-none focus-visible:bg-white/90 disabled:hover:bg-white inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200"
-                href="/docs"
+                href="/https://explorer.intelligencia.ai/"
               >
-               <svg style={{width:15}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"/></svg>
-                <span style={{marginLeft:10}}>Docs</span>
+                <span style={{marginLeft:10}}>Exploer v1</span>
                 <span className="text-[#70757E]">
                   <svg
                     fill="none"
@@ -48,11 +47,7 @@ export default function Home() {
           <div className="grid gap-6 items-center">
             <div className="flex flex-col justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 style={{lineHeight:"47px"}} className="mb-5 text-4xl font-bold tracking-tighter sm:text-4xl xl:text-4xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-                  Using GraphQL is like ordering tacoz <br /> 
-                  just ask, and its served!
-                </h1>
-                <form style={{marginTop:100}} onSubmit={handleSubmit} className="w-full h-full">
+                <form  onSubmit={handleSubmit} className="w-full h-full">
                 <div className="flexpy-[4vh] my-12 justify-center items-center">
                 <div style={{position:"relative",width: 515,margin: "0 auto"}} className="flex  flex-col w-full justify-center items-center align-start">
                <div style={{top: "-34px", left: "32px", display: "flex",position: "absolute",alignItems: "center"}}>
@@ -69,7 +64,7 @@ export default function Home() {
                           onChange={(e) => setEndpoint(e.target.value)}
                           type="text"
                           className="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm" 
-                          placeholder="https://api.platform.opentargets.org/api/v4/graphql" 
+                          placeholder="https://portfolio-optimizer-api.intelligencia.ai/v1/graphql" 
                           style={{height: "41px !important"}} 
                         />
                     </div>
@@ -92,7 +87,7 @@ export default function Home() {
                           value={input}
                           onChange={handleInputChange}
                           className="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm" 
-                          placeholder="Get all targets" 
+                          placeholder="Get 25 drugs" 
                           style={{height: "41px !important"}} 
                         />
                     </div>
