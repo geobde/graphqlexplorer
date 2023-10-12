@@ -56,7 +56,7 @@ export default function Home() {
       </header>
       <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-black to-black via-zinc-900">
         <h2
-          style={{ lineHeight: "40px" }}
+          style={{ lineHeight: "40px",padding: "0 40px"  }}
           className="mb-20 text-3xl text-center font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500"
         >
           Generate data <br /> from simple text prompts
