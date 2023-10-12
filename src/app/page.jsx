@@ -62,6 +62,7 @@ export default function Home() {
           Generate data <br /> from simple text prompts
         </h2>
         <form
+          style={{ padding: "0 40px" }}
           className="w-full flex flex-col items-center justify-center"
           onSubmit={handleSubmit}
         >
