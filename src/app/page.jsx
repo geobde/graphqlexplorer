@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <header className="w-full flex flex-row items-center justify-between absolute top-0 border-b border-transparent transition duration-200 ease-in-out">
         <div
-          style={{ margin: "30px 40px" }}
+          style={{ margin: "30px" }}
           className="w-full items-center justify-between transition duration-500 ease-in-out flex"
         >
           <svg
