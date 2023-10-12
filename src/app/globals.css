@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+pre {
+    background: rgb(23 23 26) !important;
+    border: none !important;
+}

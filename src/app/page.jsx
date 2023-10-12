@@ -1,9 +1,13 @@
 "use client";
 import { useChat } from "ai/react";
 import { useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { twilight } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+const API = "https://spacex-production.up.railway.app/v1/graphql";
 
 export default function Home() {
-  const [endpoint, setEndpoint] = useState("");
+  const [endpoint, setEndpoint] = useState(API);
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
       body: {
@@ -56,7 +60,7 @@ export default function Home() {
       </header>
       <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-black to-black via-zinc-900">
         <h2
-          style={{ lineHeight: "40px",padding: "0 20px"  }}
+          style={{ lineHeight: "40px", padding: "0 20px" }}
           className="mb-20 text-3xl text-center font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500"
         >
           Generate data <br /> from simple text prompts
@@ -197,8 +201,15 @@ export default function Home() {
           </div>
         </form>
         {!isLoading && (
-          <span className="text-white text-center mt-16">
-            {lastMessage?.content}
+          <span
+            style={{ width: "480px", height: "200px" }}
+            className="text-white text-center mt-16"
+          >
+            {lastMessage?.content && (
+              <SyntaxHighlighter language="graphql" style={twilight}>
+                {lastMessage?.content}
+              </SyntaxHighlighter>
+            )}
           </span>
         )}
       </section>
