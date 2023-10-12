@@ -1,7 +1,8 @@
-import OpenAI from 'openai';
-import { OpenAIStream, StreamingTextResponse } from 'ai';
+import OpenAI from "openai";
+import { OpenAIStream, StreamingTextResponse } from "ai";
 
 const MODEL = "gpt-3.5-turbo";
+
 const INTROSPECTION_QUERY = `
   query targetInfo {
   target(ensemblId: "ENSG00000169083") {
@@ -23,16 +24,13 @@ const INTROSPECTION_QUERY = `
       value
     }
   }
-}`
-;
-
+}`;
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-
-export const runtime = 'edge';
+export const runtime = "edge";
 
 export async function POST(req) {
   const { endpoint, messages } = await req.json();
@@ -40,9 +38,8 @@ export async function POST(req) {
   const response = await openai.chat.completions.create({
     model: MODEL,
     stream: true,
-    messages
+    messages,
   });
   const stream = OpenAIStream(response);
   return new StreamingTextResponse(stream);
 }
-
