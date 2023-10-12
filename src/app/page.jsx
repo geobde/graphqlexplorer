@@ -56,13 +56,13 @@ export default function Home() {
       </header>
       <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-black to-black via-zinc-900">
         <h2
-          style={{ lineHeight: "40px",padding: "0 30px"  }}
+          style={{ lineHeight: "40px",padding: "0 20px"  }}
           className="mb-20 text-3xl text-center font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500"
         >
           Generate data <br /> from simple text prompts
         </h2>
         <form
-          style={{ padding: "0 40px" }}
+          style={{ padding: "0 20px" }}
           className="w-full flex flex-col items-center justify-center"
           onSubmit={handleSubmit}
         >
