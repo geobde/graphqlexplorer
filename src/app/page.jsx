@@ -24,14 +24,7 @@ export default function Home() {
           style={{ margin: "30px" }}
           className="w-full items-center justify-between transition duration-500 ease-in-out flex"
         >
-          <svg
-            style={{ fill: "white", width: "40px", height: "40px" }}
-            xmlns="http://www.w3.org/2000/svg"
-            height="1em"
-            viewBox="0 0 512 512"
-          >
-            <path d="M418.4 157.9c35.3-8.3 61.6-40 61.6-77.9c0-44.2-35.8-80-80-80c-43.4 0-78.7 34.5-80 77.5L136.2 151.1C121.7 136.8 101.9 128 80 128c-44.2 0-80 35.8-80 80s35.8 80 80 80c12.2 0 23.8-2.7 34.1-7.6L259.7 407.8c-2.4 7.6-3.7 15.8-3.7 24.2c0 44.2 35.8 80 80 80s80-35.8 80-80c0-27.7-14-52.1-35.4-66.4l37.8-207.7zM156.3 232.2c2.2-6.9 3.5-14.2 3.7-21.7l183.8-73.5c3.6 3.5 7.4 6.7 11.6 9.5L317.6 354.1c-5.5 1.3-10.8 3.1-15.8 5.5L156.3 232.2z" />
-          </svg>
+          <svg style={{ color: "white", width: "40px", height: "40px" }}  viewBox="0 0 24 24" class="h-5 w-5 space-kit-1a134qk"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M13.5 6.748a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5zM21 .748a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM21 13.498a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM13.5 18.748a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM3 18.748a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM3.75 2.998a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM16.151 7.848l3.26-3.26M16.794 12.292l2.285 2.285M13.5 14.248v4.5M10.851 13.147L4.59 19.408M10.001 9.149L5.61 6.514"></path></g></svg>
           <a
             className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-2 gap-0 font-semibold bg-white text-black hover:bg-white/90 focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:outline-none focus-visible:bg-white/90 disabled:hover:bg-white inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200"
             target="_blank"
@@ -200,18 +193,16 @@ export default function Home() {
             </button>
           </div>
         </form>
-        {!isLoading && (
           <span
-            style={{ width: "480px", height: "200px" }}
+            style={{ width: "480px" }}
             className="text-white text-center mt-16"
           >
-            {lastMessage?.content && (
+            {lastMessage?.content && !isLoading && (
               <SyntaxHighlighter language="graphql" style={twilight}>
                 {lastMessage?.content}
               </SyntaxHighlighter>
             )}
           </span>
-        )}
       </section>
     </>
   );
