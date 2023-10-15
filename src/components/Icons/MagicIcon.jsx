@@ -22,5 +22,4 @@ const MagicIcon = () => {
   );
 };
 
-
-export default  MagicIcon;
+export default MagicIcon;

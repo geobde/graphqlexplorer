@@ -6,5 +6,4 @@ const SendIcon = () => {
   );
 };
 
-
 export default SendIcon;

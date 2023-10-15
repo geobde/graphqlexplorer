@@ -15,7 +15,7 @@ export const Input = ({
         >
           <div className="relative flex flex-1 min-w-0 self-start">
             <input
-             {...rest}
+              {...rest}
               value={value}
               type="text"
               className="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm"
