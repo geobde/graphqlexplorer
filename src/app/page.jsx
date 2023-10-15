@@ -12,20 +12,8 @@ import {
   SendIcon,
 } from "../components/Icons";
 import { useUi } from "../hooks";
+import { introspectionQuery } from "../queries";
 import { useCallback } from "react";
-
-const INTROSPECTION_QUERY = JSON.stringify({
-  query: `
-query IntrospectionQuery {
-  __schema {
-    types {
-      name
-      description
-    }
-  }
-}
-`,
-});
 
 export default function Home({
   title = (
@@ -44,19 +32,27 @@ export default function Home({
       },
     });
 
-  const onBlur = useCallback(async () => {
+  const handleInputBlur = useCallback(async () => {
     if (schema || !endpoint) return null;
 
-    const currentSchema = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: INTROSPECTION_QUERY,
-    });
+    try {
+      const currentSchema = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: introspectionQuery,
+      });
 
-    const result = await currentSchema.json();
-    setSchema(JSON.stringify(result));
+      if (!currentSchema.ok) {
+        throw new Error(`Failed to fetch schema: ${currentSchema.status}`);
+      }
+
+      const result = await currentSchema.json();
+      setSchema(JSON.stringify(result));
+    } catch (error) {
+      console.error("An error occurred while fetching the schema:", error);
+    }
   }, [schema]);
 
   const lastMessage = messages[messages.length - 1];
@@ -75,7 +71,7 @@ export default function Home({
           <Input
             value={endpoint}
             onChange={(e) => setEndpoint(e.target.value)}
-            onBlur={onBlur}
+            onBlur={handleInputBlur}
             placeholder="Endpoint URL"
             suffix={schema ? <CheckIcon /> : <AccessIcon />}
             prefix={<LinkIcon />}
