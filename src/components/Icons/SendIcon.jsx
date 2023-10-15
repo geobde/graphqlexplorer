@@ -1,5 +1,3 @@
-import MagicIcon from "./MagicIcon";
-
 const SendIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -9,4 +7,4 @@ const SendIcon = () => {
 };
 
 
-export default MagicIcon;
+export default SendIcon;
