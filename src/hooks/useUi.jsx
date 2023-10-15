@@ -2,12 +2,12 @@ import { useState, useCallback } from "react";
 
 const useUi = (defaultValue = "", key = "", persist = false) => {
   const [localValue, setLocalValue] = useState(
-    localStorage.getItem(key) || defaultValue
+    (typeof window !== "undefined" && localStorage.getItem(key)) || defaultValue
   );
 
   const setValue = useCallback(
     (newValue) => {
-      if (persist) {
+      if (persist && typeof window !== "undefined") {
         localStorage.setItem(key, newValue);
       }
       setLocalValue(newValue);
