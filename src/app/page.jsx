@@ -53,7 +53,7 @@ export default function Home({
     } catch (error) {
       console.error("An error occurred while fetching the schema:", error);
     }
-  }, [schema]);
+  }, [schema, endpoint, setSchema]);
 
   const lastMessage = messages[messages.length - 1];
 

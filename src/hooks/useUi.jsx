@@ -12,7 +12,7 @@ const useUi = (defaultValue = "", key = "", persist = false) => {
       }
       setLocalValue(newValue);
     },
-    [key]
+    [key, persist]
   );
 
   return [localValue, setValue];
