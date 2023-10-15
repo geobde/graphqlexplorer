@@ -65,6 +65,7 @@ export default function Home({
           {title}
         </h2>
         <form
+          style={{ position: "relative" }}
           className="w-full flex flex-col items-center justify-center p-5"
           onSubmit={handleSubmit}
         >
