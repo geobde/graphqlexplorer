@@ -46,19 +46,9 @@ export default function Home({
             value={endpoint}
             setValue={setEndpoint}
             placeholder="Endpoint URL"
-            suffix={
-              <button
-                type="button"
-                className="invert-theme bg-gs-gray-400 text-sm gap-1.5 justify-start text-gs-background-1000 rounded-full flex items-center h-8 origin-right overflow-hidden ease-in font-medium px-[9px] disabled:opacity-50 hover:bg-gs-gray-600"
-                data-state="closed"
-                style={{ background: "rgb(209, 213, 219)", width: "32px" }}
-              >
-                <AccessIcon />
-              </button>
-            }
+            suffix={<AccessIcon />}
             prefix={<LinkIcon />}
           />
-
           <Input
             value={input}
             setValue={handleInputChange}
