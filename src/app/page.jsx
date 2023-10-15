@@ -6,7 +6,6 @@ import { Result } from "../components/Result";
 import {
   LinkIcon,
   AccessIcon,
-  CheckIcon,
   MagicIcon,
   LoadingIcon,
   SendIcon,
@@ -74,7 +73,7 @@ export default function Home({
             onChange={(e) => setEndpoint(e.target.value)}
             onBlur={handleInputBlur}
             placeholder="Endpoint URL"
-            suffix={schema ? <CheckIcon /> : <AccessIcon />}
+            suffix={<AccessIcon />}
             prefix={<LinkIcon />}
           />
           <Input
