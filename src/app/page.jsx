@@ -77,7 +77,7 @@ export default function Home({
             onChange={(e) => setEndpoint(e.target.value)}
             onBlur={onBlur}
             placeholder="Endpoint URL"
-            suffix={endpoint ? <CheckIcon /> : <AccessIcon />}
+            suffix={schema ? <CheckIcon /> : <AccessIcon />}
             prefix={<LinkIcon />}
           />
           <Input
