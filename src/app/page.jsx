@@ -1,18 +1,17 @@
 "use client";
 import { useChat } from "ai/react";
-import { useState } from "react";
 import { Input } from "../components/Input";
 import { Header } from "../components/Header";
 import { Result } from "../components/Result";
 import {
   LinkIcon,
   AccessIcon,
+  CheckIcon,
   MagicIcon,
   LoadingIcon,
   SendIcon,
 } from "../components/Icons";
-
-const API = "https://spacex-production.up.railway.app/v1/graphql";
+import { useUi } from "../hooks";
 
 export default function Home({
   title = (
@@ -21,7 +20,8 @@ export default function Home({
     </>
   ),
 }) {
-  const [endpoint, setEndpoint] = useState(API);
+  const [endpoint, setEndpoint] = useUi(null, "endpoint", true);
+
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
       body: {
@@ -44,9 +44,9 @@ export default function Home({
         >
           <Input
             value={endpoint}
-            setValue={setEndpoint}
+            setValue={(e) => setEndpoint(e.target.value)}
             placeholder="Endpoint URL"
-            suffix={<AccessIcon />}
+            suffix={endpoint ? <CheckIcon /> : <AccessIcon />}
             prefix={<LinkIcon />}
           />
           <Input
@@ -77,4 +77,4 @@ export default function Home({
       </section>
     </>
   );
-};
+}
