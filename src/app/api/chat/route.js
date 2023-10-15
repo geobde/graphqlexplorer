@@ -36,11 +36,6 @@ export async function POST(req) {
 
   const schema = await introspectionResult.json();
 
-  console.log(
-    "ELAAA",
-    `Please consider the following GraphQL schema represented by ${schema}, and let's transform the text ${lastMessage} into a GraphQL query that corresponds to this schema.`
-  );
-
   const response = await openai.chat.completions.create({
     model: MODEL,
     stream: true,

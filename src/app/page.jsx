@@ -1,12 +1,19 @@
 "use client";
 import { useChat } from "ai/react";
 import { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { twilight } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Input } from "./components/Input";
+import { Header } from "./components/Header";
+import { Result } from "./components/Result";
 
 const API = "https://spacex-production.up.railway.app/v1/graphql";
 
-export default function Home() {
+export default function Home({
+  title = (
+    <>
+      Generate data <br /> from simple text prompts
+    </>
+  ),
+}) {
   const [endpoint, setEndpoint] = useState(API);
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
@@ -19,84 +26,21 @@ export default function Home() {
 
   return (
     <>
-      <header className="w-full flex flex-row items-center justify-between absolute top-0 border-b border-transparent transition duration-200 ease-in-out">
-        <div
-          style={{ margin: "30px" }}
-          className="w-full items-center justify-between transition duration-500 ease-in-out flex"
-        >
-          <svg style={{ color: "white", width: "40px", height: "40px" }}  viewBox="0 0 24 24" class="h-5 w-5 space-kit-1a134qk"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M13.5 6.748a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5zM21 .748a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM21 13.498a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM13.5 18.748a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM3 18.748a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM3.75 2.998a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM16.151 7.848l3.26-3.26M16.794 12.292l2.285 2.285M13.5 14.248v4.5M10.851 13.147L4.59 19.408M10.001 9.149L5.61 6.514"></path></g></svg>
-          <a
-            className="outline-none transition duration-150 ease-in-out focus-visible:ring-2 focus-visible:ring-slate-7 text-sm h-10 pl-4 pr-2 gap-0 font-semibold bg-white text-black hover:bg-white/90 focus-visible:ring-4 focus-visible:ring-white/30 focus-visible:outline-none focus-visible:bg-white/90 disabled:hover:bg-white inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200"
-            target="_blank"
-            href="/docs"
-          >
-            <span>Docs</span>
-            <span className="text-[#70757E]">
-              <svg
-                fill="none"
-                height="24"
-                viewBox="0 0 24 24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.75 8.75L14.25 12L10.75 15.25"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                ></path>
-              </svg>
-            </span>
-          </a>
-        </div>
-      </header>
+      <Header />
       <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-black to-black via-zinc-900">
-        <h2
-          style={{ lineHeight: "40px", padding: "0 20px" }}
-          className="mb-20 text-3xl text-center font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500"
-        >
-          Generate data <br /> from simple text prompts
+        <h2 className="mb-20 text-3xl text-center font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 p-5">
+          {title}
         </h2>
         <form
-          style={{ padding: "0 20px" }}
-          className="w-full flex flex-col items-center justify-center"
+          className="w-full flex flex-col items-center justify-center p-5"
           onSubmit={handleSubmit}
         >
-          <div className="mb-5 flex items-center justify-center w-full max-w-lg gap-2 px-2 divide-x divide-zinc-600 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
-            <div className="flex items-center justify-center rounded-l-full">
-              <svg
-                style={{
-                  marginLeft: 6,
-                  marginRight: 2,
-                  width: 17,
-                  fill: "rgb(209, 213, 219)",
-                }}
-                className="ml-6 mr-2 w-17 fill-rgb(209, 213, 219)"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
-              >
-                <path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1-1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l-1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z" />
-              </svg>
-            </div>
-            <div className="flex items-center self-end flex-1 min-w-0">
-              <div
-                className="relative w-full flex items-center transition-all duration-300 min-h-full h-fit"
-                style={{ height: "41px" }}
-              >
-                <div className="relative flex flex-1 min-w-0 self-start">
-                  <input
-                    value={endpoint}
-                    onChange={(e) => setEndpoint(e.target.value)}
-                    type="text"
-                    className="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm"
-                    placeholder="Endpoint URL"
-                    style={{ height: "41px !important" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <button
+          <Input
+            value={endpoint}
+            setValue={setEndpoint}
+            placeholder="Endpoint URL"
+            suffix={
+              <button
               type="button"
               className="invert-theme bg-gs-gray-400 text-sm gap-1.5 justify-start text-gs-background-1000 rounded-full flex items-center h-8 origin-right overflow-hidden ease-in font-medium px-[9px] disabled:opacity-50 hover:bg-gs-gray-600"
               data-state="closed"
@@ -114,10 +58,66 @@ export default function Home() {
                 ></path>
               </svg>
             </button>
-          </div>
+            }
+            prefix={
+              <svg
+                style={{
+                  marginLeft: 6,
+                  marginRight: 2,
+                  width: 17,
+                  fill: "rgb(209, 213, 219)",
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 512"
+              >
+                <path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1-1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l-1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z" />
+              </svg>
+            }
+          />
 
-          <div className="mt-5 flex items-center justify-center w-full max-w-lg gap-2 px-2 divide-x divide-zinc-600 shadow-lg min-h-12 bg-zinc-900 rounded-3xl shadow-black/40 z-10">
-            <div className="flex items-center justify-center rounded-l-full">
+          <Input
+            value={input}
+            setValue={handleInputChange}
+            placeholder="Ask a question"
+            suffix={
+              <button
+                className="invert-theme bg-gs-gray-400 text-sm gap-1.5 justify-start text-gs-background-1000 rounded-full flex items-center h-8 origin-right overflow-hidden ease-in font-medium px-[9px] disabled:opacity-50 hover-bg-gs-gray-600"
+                style={{
+                  background: "rgb(209, 213, 219)",
+                  width: "32px",
+                  border: "none",
+                  color: "#a1a1aa",
+                }}
+                type="submit"
+              >
+                {isLoading ? (
+                  <svg
+                    style={{ color: "black" }}
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="animate-spin"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeDasharray="40 60"
+                    />
+                  </svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M49.9 27.8C15.1 12.7-19.2 50.1-1.2 83.5L68.1 212.2c4.4 8.3 12.6 13.8 21.9 15c0 0 0 0 0 0l176 22c3.4 .4 6 3.3 6 6.7s-2.6 6.3-6 6.7l-176 22s0 0 0 0c-9.3 1.2-17.5 6.8-21.9 15L-1.2 428.5c-18 33.4 16.3 70.8 51.1 55.7L491.8 292.7c32.1-13.9 32.1-59.5 0-73.4L49.9 27.8z" />
+                  </svg>
+                )}
+              </button>
+            }
+            prefix={
               <svg
                 style={{
                   marginLeft: 6,
@@ -137,72 +137,13 @@ export default function Home() {
                   fill="currentColor"
                 ></path>
               </svg>
-            </div>
-            <div className="flex items-center self-end flex-1 min-w-0">
-              <div
-                className="relative w-full flex items-center transition-all duration-300 min-h-full h-fit"
-                style={{ height: "41px" }}
-              >
-                <div className="relative flex flex-1 min-w-0 self-start">
-                  <input
-                    type="text"
-                    value={input}
-                    onChange={handleInputChange}
-                    className="flex-[1_0_50%] min-w-[50%] disabled:opacity-80 text-white bg-transparent border-0 shadow-none resize-none outline-none ring-0 disabled:bg-transparent selection:bg-teal-300 selection:text-black placeholder:text-zinc-400 [scroll-padding-block:0.75rem] pl-3 py-3 sm:min-h-[15px] sm:leading-6 text-base md:text-sm"
-                    placeholder="Ask a question"
-                    style={{ height: "41px !important" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <button
-              className="invert-theme bg-gs-gray-400 text-sm gap-1.5 justify-start text-gs-background-1000 rounded-full flex items-center h-8 origin-right overflow-hidden ease-in font-medium px-[9px] disabled:opacity-50 hover-bg-gs-gray-600"
-              style={{
-                background: "rgb(209, 213, 219)",
-                width: "32px",
-                border: "none",
-                color: "#a1a1aa",
-              }}
-              type="submit"
-            >
-              {isLoading ? (
-                <svg
-                  style={{ color: "black" }}
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="animate-spin"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeDasharray="40 60"
-                  />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path d="M49.9 27.8C15.1 12.7-19.2 50.1-1.2 83.5L68.1 212.2c4.4 8.3 12.6 13.8 21.9 15c0 0 0 0 0 0l176 22c3.4 .4 6 3.3 6 6.7s-2.6 6.3-6 6.7l-176 22s0 0 0 0c-9.3 1.2-17.5 6.8-21.9 15L-1.2 428.5c-18 33.4 16.3 70.8 51.1 55.7L491.8 292.7c32.1-13.9 32.1-59.5 0-73.4L49.9 27.8z" />
-                </svg>
-              )}
-            </button>
-          </div>
+            }
+          />
         </form>
-          <span
-            style={{ width: "480px" }}
-            className="text-white text-center mt-16"
-          >
-            {lastMessage?.content && !isLoading && (
-              <SyntaxHighlighter language="graphql" style={twilight}>
-                {lastMessage?.content}
-              </SyntaxHighlighter>
-            )}
-          </span>
+        <Result
+          message={lastMessage?.content}
+          isReady={lastMessage?.content && !isLoading}
+        />
       </section>
     </>
   );
