@@ -12,6 +12,20 @@ import {
   SendIcon,
 } from "../components/Icons";
 import { useUi } from "../hooks";
+import { useCallback } from "react";
+
+const INTROSPECTION_QUERY = JSON.stringify({
+  query: `
+query IntrospectionQuery {
+  __schema {
+    types {
+      name
+      description
+    }
+  }
+}
+`,
+});
 
 export default function Home({
   title = (
@@ -21,13 +35,29 @@ export default function Home({
   ),
 }) {
   const [endpoint, setEndpoint] = useUi(null, "endpoint", true);
+  const [schema, setSchema] = useUi(null, "schema", true);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
       body: {
-        endpoint,
+        schema,
       },
     });
+
+  const onBlur = useCallback(async () => {
+    if (schema || !endpoint) return null;
+
+    const currentSchema = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: INTROSPECTION_QUERY,
+    });
+
+    const result = await currentSchema.json();
+    setSchema(JSON.stringify(result));
+  }, [schema]);
 
   const lastMessage = messages[messages.length - 1];
 
@@ -44,14 +74,15 @@ export default function Home({
         >
           <Input
             value={endpoint}
-            setValue={(e) => setEndpoint(e.target.value)}
+            onChange={(e) => setEndpoint(e.target.value)}
+            onBlur={onBlur}
             placeholder="Endpoint URL"
             suffix={endpoint ? <CheckIcon /> : <AccessIcon />}
             prefix={<LinkIcon />}
           />
           <Input
             value={input}
-            setValue={handleInputChange}
+            onChange={handleInputChange}
             placeholder="Ask a question"
             suffix={
               <button
