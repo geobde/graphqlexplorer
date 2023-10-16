@@ -1,7 +1,6 @@
 "use client";
 import { useChat } from "ai/react";
 import { Input } from "../components/Input";
-import { Header } from "../components/Header";
 import { Result } from "../components/Result";
 import {
   LinkIcon,
@@ -32,7 +31,7 @@ export default function Home({
     });
 
   const handleInputBlur = useCallback(async () => {
-    if (schema || !endpoint) return null;
+    if (!endpoint) return null;
 
     try {
       const currentSchema = await fetch(endpoint, {
@@ -52,14 +51,12 @@ export default function Home({
     } catch (error) {
       console.error("An error occurred while fetching the schema:", error);
     }
-  }, [schema, endpoint, setSchema]);
+  }, [endpoint, setSchema]);
 
   const lastMessage = messages[messages.length - 1];
 
   return (
     <>
-      <Header />
-
       {lastMessage?.content ? (
         <section className="flex flex-col items-center  h-screen bg-gradient-to-br from-black to-black via-zinc-900">
           {isLoading ? (
