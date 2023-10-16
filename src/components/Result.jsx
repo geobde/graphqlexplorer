@@ -5,7 +5,7 @@ export const Result = ({ message, isReady }) => {
   if (!isReady) return null;
 
   return (
-    <span className="w-full max-w-lg gap-2 px-2 text-white text-center mt-16">
+    <span style={{width:"80%"}} className="text-white text-center mt-16">
       <SyntaxHighlighter language="graphql" style={twilight}>
         {message}
       </SyntaxHighlighter>
