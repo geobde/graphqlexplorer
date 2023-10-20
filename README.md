@@ -1,4 +1,4 @@
-# [graphqlexplorer.app](https://graphqlexplorer.vercel.app/)
+# [graphqlexplorer](https://graphqlexplorer.vercel.app/)
 
 **Easily Generate Queries from Simple Text Prompts**
 
