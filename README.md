@@ -1,4 +1,4 @@
-# GraphQL Explorer
+# [graphqlexplorer.app](https://graphqlexplorer.vercel.app/)
 
 **Easily Generate Queries from Simple Text Prompts**
 
