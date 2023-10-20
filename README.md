@@ -1,7 +1,5 @@
 # [graphqlexplorer](https://graphqlexplorer.vercel.app/)
 
-**Easily Generate Queries from Simple Text Prompts**
-
 [![GraphQL Explorer](./screen.png)](https://graphqlexplorer.vercel.app/)
 
 ## Overview
