@@ -1,1 +1,1 @@
-GraphQL Explorer | Generate data from simple text prompts.
+GraphQL Explorer | Generate query from simple text prompts.

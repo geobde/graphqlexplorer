@@ -49,7 +49,7 @@ export default function Home() {
   const lastMessage = messages[messages.length - 1];
 
   return (
-    <div style={{ position: "relative" }}>
+    <>
       {lastMessage?.content ? (
         <section className="flex flex-col items-center  h-screen bg-gradient-to-br from-black to-black via-zinc-900">
           {isLoading ? (
@@ -72,28 +72,14 @@ export default function Home() {
             className="w-full flex flex-col items-center justify-center p-5"
             onSubmit={handleSubmit}
           >
-            <div
-              style={{
-                width: "100%",
-                position: "absolute",
-                bottom: 20,
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
+            <div class="w-full absolute bottom-20 flex justify-center">
               <Input
                 value={input}
                 onChange={handleInputChange}
                 placeholder="Ask a question"
                 suffix={
                   <button
-                    className="invert-theme bg-gs-gray-400 text-sm gap-1.5 justify-start text-gs-background-1000 rounded-full flex items-center h-8 origin-right overflow-hidden ease-in font-medium px-[9px] disabled:opacity-50 hover-bg-gs-gray-600"
-                    style={{
-                      background: "rgb(209, 213, 219)",
-                      width: "32px",
-                      border: "none",
-                      color: "#a1a1aa",
-                    }}
+                    className="bg-gray-300 w-8 h-8 border-none text-gray-500 invert-theme bg-gs-gray-400 text-sm gap-1.5 justify-start text-gs-background-1000 rounded-full flex items-center h-8 origin-right overflow-hidden ease-in font-medium px-[9px] disabled:opacity-50 hover-bg-gs-gray-600"
                     type="submit"
                   >
                     {isLoading ? <LoadingIcon /> : <SendIcon />}
@@ -106,9 +92,11 @@ export default function Home() {
         </section>
       ) : (
         <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-black to-black via-zinc-900">
+          <span class="text-white text-2xl font-semibold absolute top-10 left-10">
+            GraphQL Explorer
+          </span>
           <a
-            style={{ position: "absolute", top: "35px", right: "35px" }}
-            class="flex max-w-fit items-center justify-center space-x-2 rounded-full bg-gradient-to-r from-white to-gray-500 px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5"
+            class="absolute top-10 right-10 flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5"
             href="https://github.com/geobde/graphqlexplorer"
             target="_blank"
             rel="noopener noreferrer"
@@ -124,11 +112,8 @@ export default function Home() {
             </svg>
             <p>Star on GitHub</p>
           </a>
-          <h2
-            style={{ lineHeight: "55px" }}
-            className="mb-4 text-center font-bold tracking-normal bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 text-5xl"
-          >
-            Generate data <br />
+          <h2 className="line-height-14 mb-4 text-center font-bold tracking-normal bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 text-4xl">
+            Generate query <br />
             from simple text prompts
           </h2>
           <form
@@ -149,20 +134,10 @@ export default function Home() {
               placeholder="Ask a question"
               suffix={
                 <button
-                  className="invert-theme bg-gs-gray-400 text-sm gap-1.5 justify-start text-gs-background-1000 rounded-full flex items-center h-8 origin-right overflow-hidden ease-in font-medium px-[9px] disabled:opacity-50 hover-bg-gs-gray-600"
-                  style={{
-                    background: "rgb(209, 213, 219)",
-                    width: "32px",
-                    border: "none",
-                    color: "#a1a1aa",
-                  }}
+                  className="bg-gray-300 w-8 h-8 border-none text-gray-500 invert-theme bg-gs-gray-400 text-sm gap-1.5 justify-start text-gs-background-1000 rounded-full flex items-center h-8 origin-right overflow-hidden ease-in font-medium px-[9px] disabled:opacity-50 hover-bg-gs-gray-600"
                   type="submit"
                 >
-                  {isLoading ? (
-                    <LoadingIcon style={{ color: "black" }} />
-                  ) : (
-                    <SendIcon />
-                  )}
+                  {isLoading ? <LoadingIcon /> : <SendIcon />}
                 </button>
               }
               prefix={<MagicIcon />}
@@ -170,6 +145,6 @@ export default function Home() {
           </form>
         </section>
       )}
-    </div>
+    </>
   );
 }
