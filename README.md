@@ -2,8 +2,6 @@
 
 **Easily Generate Queries from Simple Text Prompts**
 
-Explore GraphQL with effortless query generation using GraphQL Explorer!
-
 [![GraphQL Explorer](./screen.png)](https://graphqlexplorer.vercel.app/)
 
 ## Overview
