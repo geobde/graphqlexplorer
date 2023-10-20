@@ -18,10 +18,19 @@ export async function POST(req) {
     stream: true,
     messages: [
       {
+        role: "system",
+        content: "You are a GraphQL query generator.",
+      },
+      {
         role: "user",
-        content: `Please consider the following GraphQL schema represented by ${schema}, and let's transform the text ${JSON.stringify(
-          lastMessage?.content
-        )} into a GraphQL query that corresponds to this schema and return only the query in this format query ExampleQuery { rockets { name } } without explanation, if you didint make just return Please try different prompt`,
+        content: `Given the following GraphQL schema:
+  ${schema}
+  Please transform the following text into a GraphQL query:
+  "${lastMessage?.content}"`,
+      },
+      {
+        role: "assistant",
+        content: "Generate the GraphQL query.",
       },
     ],
   });

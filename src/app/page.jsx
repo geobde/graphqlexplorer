@@ -1,4 +1,5 @@
 "use client";
+import { useState, useCallback } from "react";
 import { useChat } from "ai/react";
 import { Input } from "../components/Input";
 import { Result } from "../components/Result";
@@ -9,13 +10,11 @@ import {
   LoadingIcon,
   SendIcon,
 } from "../components/Icons";
-import { useUi } from "../hooks";
 import { introspectionQuery } from "../queries";
-import { useCallback } from "react";
 
 export default function Home() {
-  const [endpoint, setEndpoint] = useUi(null, "endpoint", true);
-  const [schema, setSchema] = useUi(null, "schema", true);
+  const [endpoint, setEndpoint] = useState(null);
+  const [schema, setSchema] = useState(null);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat({
@@ -25,7 +24,7 @@ export default function Home() {
     });
 
   const handleInputBlur = useCallback(async () => {
-    if (!endpoint) return null;
+    if (schema !== null) return null;
 
     try {
       const currentSchema = await fetch(endpoint, {
@@ -45,12 +44,12 @@ export default function Home() {
     } catch (error) {
       console.error("An error occurred while fetching the schema:", error);
     }
-  }, [endpoint, setSchema]);
+  }, [schema, endpoint, setSchema]);
 
   const lastMessage = messages[messages.length - 1];
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       {lastMessage?.content ? (
         <section className="flex flex-col items-center  h-screen bg-gradient-to-br from-black to-black via-zinc-900">
           {isLoading ? (
@@ -107,23 +106,30 @@ export default function Home() {
         </section>
       ) : (
         <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-black to-black via-zinc-900">
+          <a
+            style={{ position: "absolute", top: "35px", right: "35px" }}
+            class="flex max-w-fit items-center justify-center space-x-2 rounded-full bg-gradient-to-r from-white to-gray-500 px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5"
+            href="https://github.com/geobde/graphqlexplorer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+            </svg>
+            <p>Star on GitHub</p>
+          </a>
           <h2
             style={{ lineHeight: "55px" }}
-            className="mb-8 text-center font-bold tracking-normal bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 text-5xl"
+            className="mb-4 text-center font-bold tracking-normal bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 text-5xl"
           >
             Generate data <br />
-            from simple{" "}
-            <span className="relative whitespace-nowrap text-[#1181de]">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 418 42"
-                className="absolute top-2/3 left-0 h-[0.58em] w-full fill-[#1181de]"
-                preserveAspectRatio="none"
-              >
-                <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
-              </svg>
-              <span className="relative">text prompts</span>
-            </span>
+            from simple text prompts
           </h2>
           <form
             className="w-full flex flex-col items-center justify-center p-5"
@@ -133,7 +139,7 @@ export default function Home() {
               value={endpoint}
               onChange={(e) => setEndpoint(e.target.value)}
               onBlur={handleInputBlur}
-              placeholder="Endpoint URL"
+              placeholder="GraphQL endpoint"
               suffix={<AccessIcon />}
               prefix={<LinkIcon />}
             />
@@ -164,6 +170,6 @@ export default function Home() {
           </form>
         </section>
       )}
-    </>
+    </div>
   );
 }

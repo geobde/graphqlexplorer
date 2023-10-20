@@ -1,12 +1,17 @@
 export const introspectionQuery = JSON.stringify({
     query: `
-  query IntrospectionQuery {
-    __schema {
-      types {
-        name
-        description
+    query IntrospectionQuery {
+      __schema {
+        queryType {
+          name
+          fields {
+            name
+            type {
+              name
+            }
+          }
+        }
       }
     }
-  }
   `,
   });
