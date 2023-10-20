@@ -1,1 +1,37 @@
-GraphQL Explorer | Generate query from simple text prompts.
+# GraphQL Explorer
+
+**Easily Generate Queries from Simple Text Prompts**
+
+Explore GraphQL with effortless query generation using GraphQL Explorer!
+
+[![GraphQL Explorer](./screen.png)](https://graphqlexplorer.vercel.app/)
+
+## Overview
+
+GraphQL Explorer is a project that simplifies the process of generating queries from plain text prompts. It harnesses the power of AI to make querying your GraphQL APIs a breeze.
+
+## How It Works
+
+This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel AI SDK](https://sdk.vercel.ai/docs) with streaming capabilities. Here's a quick overview of the workflow:
+
+1. **User Input**: You input a text prompt or query in a user-friendly form.
+
+2. **Prompt Construction**: The system constructs a query prompt based on the input.
+
+3. **AI Magic**: The prompt is sent to the ChatGPT API using a Vercel Edge Function.
+
+4. **Streamlined Response**: The AI-generated response is streamed back to the application's user interface, allowing you to view and use the generated query effortlessly.
+
+## Getting Started
+
+1. Clone this repository to your local machine.
+
+2. Create an account on [OpenAI](https://beta.openai.com/account/api-keys).
+
+3. Store your API key in a file named `.env` in the project directory.
+
+4. Run the application from the command line, and it will be available at `http://localhost:3000`.
+
+```bash
+npm run dev
+```
