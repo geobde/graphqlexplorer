@@ -18,16 +18,6 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 
 4. **Streamlined Response**: The AI-generated response is streamed back to the application's user interface, allowing you to view and use the generated query effortlessly.
 
-## Example Case
-
-#### Endpoint
-
-- SWAPI GraphQL Endpoint: https://swapi-graphql.netlify.app/.netlify/functions/index
-
-#### Question
-
-- Retrieve the titles of all films
-
 ## Getting Started
 
 1. Clone this repository to your local machine.
@@ -38,6 +28,16 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 
 4. Run the application from the command line, and it will be available at `http://localhost:3000`.
 
+## Example Case
+
+#### Endpoint
+
+- SWAPI GraphQL Endpoint: https://swapi-graphql.netlify.app/.netlify/functions/index
+
+#### Question
+
+- Retrieve the titles of all films
+
 ```bash
 npm run dev
 ```
@@ -45,3 +45,7 @@ npm run dev
 ## Read More
 
 [Generate GraphQL queries from simple text prompts](https://medium.com/@geobde/generate-graphql-queries-from-simple-text-prompts-d276912d6a60)
+
+## License
+
+See the [LICENSE](./LICENSE) file for licensing information.
