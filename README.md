@@ -1,7 +1,7 @@
 
 <p>GraphQL Explorer is a project that simplifies the process of generating queries from plain text prompts. <br />It harnesses the power of AI to make querying your GraphQL APIs a breeze.</p>
 
-<p>Auto-Generated UI from <a href="https://v0.dev/">v0</a>🚀</p>
+<p>🚀 Auto-Generated UI from <a href="https://v0.dev/">v0</a></p>
 
 [![GraphQL Explorer](./screen.gif)](https://graphqlexplorer.vercel.app/)
 
