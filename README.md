@@ -39,10 +39,6 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 
 - Retrieve the titles of all films
 
-```bash
-npm run dev
-```
-
 ## Read More
 
 [Generate GraphQL queries from simple text prompts](https://medium.com/@geobde/generate-graphql-queries-from-simple-text-prompts-d276912d6a60)
