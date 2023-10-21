@@ -24,11 +24,11 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 
 ## Example Case
 
-### Endpoint
+#### Endpoint
 
 - SWAPI GraphQL Endpoint: https://swapi-graphql.netlify.app/.netlify/functions/index
 
-### Question
+#### Question
 
 - Retrieve the titles of all films
 
