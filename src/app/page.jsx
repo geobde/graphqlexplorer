@@ -113,7 +113,7 @@ export default function Home() {
             <p>Star on GitHub</p>
           </a>
           <h2 className="line-height-14 mb-4 text-center font-bold tracking-normal bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 text-4xl">
-            Generate query <br />
+            Generate queries <br />
             from simple text prompts
           </h2>
           <form
