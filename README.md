@@ -1,5 +1,6 @@
 
 <h1 align="center">GraphQL Explorer</h1>
+
 [![GraphQL Explorer](./screen.gif)](https://graphqlexplorer.vercel.app/)
 
 ## Overview
