@@ -1,4 +1,9 @@
-# [graphqlexplorer](https://graphqlexplorer.vercel.app/)
+<p align="center">
+  <a href="https://graphqlexplorer.vercel.app/">
+    GraphQL Explorer
+  </a>
+</p>
+<h3 align="center">Generate GraphQL queries from simple text prompts.</h3>
 
 [![GraphQL Explorer](./screen.gif)](https://graphqlexplorer.vercel.app/)
 
