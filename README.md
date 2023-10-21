@@ -1,6 +1,7 @@
 # [graphqlexplorer](https://graphqlexplorer.vercel.app/)
 
-[![GraphQL Explorer](./screen.png)](https://graphqlexplorer.vercel.app/)
+[![GraphQL Explorer First Screen](./screen1.png)](https://graphqlexplorer.vercel.app/)
+[![GraphQL Explorer Second Screen](./screen2.png)](https://graphqlexplorer.vercel.app/)
 
 ## Overview
 
