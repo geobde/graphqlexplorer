@@ -1,5 +1,5 @@
 
-<p>⭐ GraphQL Explorer is a project that simplifies the process of generating queries from plain text prompts. It harnesses the power of AI to make querying your GraphQL APIs a breeze.</p>
+<h4>GraphQL Explorer is a project that simplifies the process of generating queries from plain text prompts. It harnesses the power of AI to make querying your GraphQL APIs a breeze.</h4>
 
 [![GraphQL Explorer](./screen.gif)](https://graphqlexplorer.vercel.app/)
 
@@ -15,7 +15,7 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 
 4. **Streamlined Response**: The AI-generated response is streamed back to the application's user interface, allowing you to view and use the generated query effortlessly.
 
-## Getting Started
+## Quickstart
 
 1. Clone this repository to your local machine.
 
@@ -38,6 +38,11 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 ## Read More
 
 [Generate GraphQL queries from simple text prompts](https://medium.com/@geobde/generate-graphql-queries-from-simple-text-prompts-d276912d6a60)
+
+## Contributors
+<a href="https://github.com/geobde/graphqlexplorer/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=graphqlexplorer/&max=400&columns=20" />
+</a>
 
 ## License
 
