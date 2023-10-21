@@ -48,4 +48,4 @@ npm run dev
 
 ## Read More
 
-[Generate GraphQL queries using ChatGPT and Vercel Edge Functions](https://medium.com/@geobde/generate-graphql-queries-from-simple-text-prompts-d276912d6a60)
+[Generate GraphQL queries from simple text prompts](https://medium.com/@geobde/generate-graphql-queries-from-simple-text-prompts-d276912d6a60)
