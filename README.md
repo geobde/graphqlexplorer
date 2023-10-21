@@ -1,6 +1,9 @@
 # [graphqlexplorer](https://graphqlexplorer.vercel.app/)
 
+**User Input**: You input a text prompt or query in a user-friendly form.
 [![GraphQL Explorer First Screen](./screen1.png)](https://graphqlexplorer.vercel.app/)
+
+**Prompt Construction**: The system constructs a query prompt based on the input.
 [![GraphQL Explorer Second Screen](./screen2.png)](https://graphqlexplorer.vercel.app/)
 
 ## Overview
