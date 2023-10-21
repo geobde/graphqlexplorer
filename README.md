@@ -24,6 +24,16 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 
 4. **Streamlined Response**: The AI-generated response is streamed back to the application's user interface, allowing you to view and use the generated query effortlessly.
 
+## Example Case
+
+### Endpoint
+
+- SWAPI GraphQL Endpoint: https://swapi-graphql.netlify.app/.netlify/functions/index
+
+### Question
+
+- Retrieve the titles of all films
+
 ## Getting Started
 
 1. Clone this repository to your local machine.
