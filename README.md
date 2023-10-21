@@ -29,7 +29,7 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 
 4. Run the application from the command line, and it will be available at `http://localhost:3000`.
 
-## Example Case
+## Example
 
 #### Endpoint
 
