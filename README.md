@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="https://twitter.com/geobde/status/1715527036846973048">
-    <img src="https://img.shields.io/twitter/follow/geobde?style=flat&label=%graphqlexplorer&logo=twitter&color=0bf&logoColor=fff" alt="Twitter" />
+    <img src="https://img.shields.io/twitter/follow/geobde?style=flat&label=graphqlexplorer&logo=twitter&color=0bf&logoColor=fff" alt="Twitter" />
   </a>
   <a href="https://github.com/geobde/graphqlexplorer/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/geobde/graphqlexplorer?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
