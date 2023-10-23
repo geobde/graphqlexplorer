@@ -69,7 +69,7 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 ## Contributors
 
 <a href="https://github.com/geobde/graphqlexplorer/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=geobde/graphqlexplorer&max=400&columns=20" />
+  <img src="https://contrib.rocks/image?repo=geobde/graphqlexplorer" />
 </a>
 
 ## Repo Activity
