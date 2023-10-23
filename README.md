@@ -82,4 +82,4 @@ This project utilizes the [ChatGPT API](https://openai.com/api/) and the [Vercel
 
 ## License
 
-See the [LICENSE](./LICENSE) file for licensing information.
+See the [LICENSE](./LICENSE) file for licensing information
